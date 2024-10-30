@@ -1,10 +1,11 @@
 import React from 'react'
-import QrCheckPage from './pages/QrCheckPage.jsx'
+import CouponPage from './pages/CouponPage'
+
 
 function App() {
   return (
     <>
-    <QrCheckPage></QrCheckPage>
+    <CouponPage></CouponPage>
     </>
   )
 }
