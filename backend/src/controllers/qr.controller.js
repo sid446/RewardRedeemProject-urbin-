@@ -13,7 +13,7 @@ const generateQr=asyncHandler(async(req,res)=>{
 
     const uuid=uuidv4();
 
-    const url=`http://localhost:5174/access?uuid=${uuid}`;
+    const url=`http://localhost:5000/access?uuid=${uuid}`;
     
     const qrDataUrl = await QRCode.toDataURL(url);
     const qrCodeEntry=new QRcode({uuid,url});
@@ -27,9 +27,9 @@ const checkQr = asyncHandler(async (req, res) => {
     if (!uuid) {
         throw new ApiError(400, "UUID is not received");
     }
-    
-    const qrCodeEntry = await QRcode.findOne({ uuid });
 
+    const qrCodeEntry = await QRcode.findOne({ uuid });
+    
     if (!qrCodeEntry) {
         throw new ApiError(400, "Not accessible through this QR code");
     }

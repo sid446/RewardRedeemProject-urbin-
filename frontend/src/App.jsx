@@ -1,12 +1,19 @@
 import React from 'react'
-import CouponPage from './pages/CouponPage'
+import { BrowserRouter,Route,Router, Routes } from 'react-router-dom'
+import CouponPage from './pages/CouponPage.jsx'
+import QrCheckPage from './pages/QrCheckPage.jsx'
+
 
 
 function App() {
   return (
-    <>
-    <CouponPage></CouponPage>
-    </>
+    <BrowserRouter>
+    
+    <Routes>
+      <Route path="/access" element={<QrCheckPage/>} />
+      <Route path="/coupon" element={<CouponPage/>}/>
+    </Routes>
+    </BrowserRouter>
   )
 }
 
