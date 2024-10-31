@@ -10,6 +10,7 @@ function App() {
     <BrowserRouter>
     
     <Routes>
+      <Route path="/" element={<QrCheckPage/>} />
       <Route path="/access" element={<QrCheckPage/>} />
       <Route path="/coupon" element={<CouponPage/>}/>
     </Routes>
