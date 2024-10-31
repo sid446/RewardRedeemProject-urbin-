@@ -25,7 +25,7 @@ function QrCheckPage() {
             return;
         }
         try {
-            const res = await fetch(`http://localhost:8000/api/v1/users/checkQr?uuid=${uuid}`, {
+            const res = await fetch(`https://backendqr-4384.onrender.com/api/v1/users/checkQr?uuid=${uuid}`, {
                 method: "GET"
             });
             if (!res.ok) throw new Error("Unable to check QR status");
@@ -46,7 +46,7 @@ function QrCheckPage() {
 
     const ChangeUsedStatus = async (uuid) => {
         try {
-            const res = await fetch("http://localhost:8000/api/v1/users/Used", {
+            const res = await fetch("https://backendqr-4384.onrender.com/api/v1/users/Used", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
